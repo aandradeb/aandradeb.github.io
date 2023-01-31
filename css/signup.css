@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #F4F4F4;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------- Header ------------ */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: header;
+    height: 60px;
+    background-color: #225A7C;
+}
+
+header .logo {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+header .logo a {
+    color: #fff;
+}
+
+.logo {
+    font-family: "Playball", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+/* ---------- Main ------------ */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: main;
+    padding: 1em 1em 2em;
+    background-color: #F4F4F4;
+}
+
+main p {
+    text-align: center;
+}
+
+main > p {
+    margin-top: 2em;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+
+main > p a {
+    color: #225A7C;
+    text-decoration: underline 2px;
+}
+
+main .signup-container {
+    width: 100%;
+    max-width: 650px;
+    height: 635px;
+    padding: 0 1em;
+    border-radius: 1em;
+    background-color: white;
+}
+
+main .signup-container > p:last-child {
+    font-size: 0.9em;
+}
+
+main .signup-container > p:last-child a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+main .signup-title {
+    margin: 1.5em 0;
+    font-weight: bolder;
+}
+
+main .signup-form {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .signup-form input,
+main .signup-form button {
+    height: 55px;
+    border-radius: 8px;
+    font-family: poppins;
+}
+
+main .signup-form input {
+    color: #292929;
+    border: 2px solid #292929;
+    padding-left: 1.25em;
+    font-weight: 500;
+}
+
+main .signup-form button {
+    border: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #169FE3;
+}
+
+main .separator {
+    height: 3px;
+    background-color: #777777;
+    margin: 1.5em 0;
+}
+
+main .btn-google,
+main .btn-facebook,
+main .btn-apple {
+    height: 55px;
+    border: transparent;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+}
+
+main .signup-form button:hover,
+main .btn-google:hover,
+main .btn-facebook:hover,
+main .btn-apple:hover {
+    cursor: pointer;
+}
+
+main .btn-google {
+    background-color: #3BB227;
+}
+
+main .btn-facebook {
+    background-color: #4766A9;
+}
+
+main .btn-apple {
+    background-color: #BDBABA;
+}
+
+
+/* ---------- Footer ------------ */
+
+footer {
+    z-index: 1;
+    display: grid;
+    grid-template-rows: auto auto 1px auto;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: #225A7C;
+    color: #fff;
+}
+
+footer .logo,
+.refer-friend,
+.invite-friend,
+.copyright-text {
+    display: none;
+}
+
+.languages-list {
+    width: 270px;
+    font-size: .8rem;
+    font-weight: 500;
+    align-self: center;
+    border-radius: 8px;
+    border-color: transparent;
+    padding-left: 1em;
+    color: inherit;
+    height: 36px;
+    background-color: #094B73;
+    font-family: poppins;
+    border: 2px solid white;
+}
+
+.legal-terms {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+.legal-terms li {
+    padding: 6px 0;
+}
+
+.legal-terms li a {
+    color: inherit;
+}
+
+footer .separator {
+    justify-self: center;
+    width: 100%;
+    height: 1px;
+    border: 1px solid #fff;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.social-media li a img {
+    width: 32px;
+}
+
+/* ---------- Media Queries ------------ */
+
+@media (min-width: 768px) {
+    main {
+        padding: 4em 0;
+    }
+
+    main .signup-container {
+        padding: 0 2.5em;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto 3px auto;
+        grid-template-areas:
+        "title language"
+        "text ."
+        "invite legal-terms"
+        "separator separator"
+        "copyright social-media";
+        align-items: center;
+        height: 320px;
+        padding: 0 4em;
+    }
+
+    footer .logo,
+    .refer-friend,
+    .invite-friend,
+    .copyright-text {
+        display: initial;
+    }
+
+    footer .logo {
+        grid-area: title;
+        font-size: 1.5em;
+    }
+
+    .refer-friend {
+        width: 40%;
+        font-size: 0.8rem;
+    }
+
+    .languages-list,
+    .legal-terms,
+    .social-media {
+        justify-self: end;
+    }
+
+    .languages-list {
+        grid-area: language;
+        width: 280px;
+        color: inherit;
+        background-color: #094B73;
+        border-radius: 8px;
+        height: 36px;
+        border: 2px solid white;
+        padding-left: 1em;
+        font-weight: 500;
+        font-family: poppins;
+    }
+
+    .languages-list option {
+        font-family: poppins;
+    }
+
+    footer p {
+        grid-area: text;
+        margin: 0;
+    }
+
+    .refer-friend {
+        width: 40%;
+    }
+
+    .invite-friend {
+        grid-area: invite;
+        font-weight: 700;
+        color: #EF9943;
+        font-size: 0.9rem;
+    }
+
+    .legal-terms {
+        grid-area: legal-terms;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        font-size: 0.85em;
+    }
+
+    .legal-terms li {
+        list-style-type: none;
+    }
+
+    .legal-terms li:nth-of-type(1n+2)::before {
+        content: '\2022';
+        /* Create a circle */
+        padding: .5em;
+    }
+
+    .legal-terms li a {
+        color: inherit;
+    }
+
+    footer .separator {
+        grid-area: separator;
+        height: 3px;
+        background-color: white;
+    }
+
+    .copyright-text {
+        grid-area: copyright;
+    }
+
+    .social-media {
+        grid-area: social-media;
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .social-media li a {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1366px) {
+    header {
+        height: 80px;
+    }
+}

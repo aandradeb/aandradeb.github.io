@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #F4F4F4;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: initial;
+}
+
+/* ---------- Header ------------ */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: transparent;
+    transition: background-color 125ms linear;
+}
+
+.hamburguer {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburguer__bar,
+.hamburguer__bar::before,
+.hamburguer__bar::after {
+    background-color: #fff;
+    width: inherit;
+    height: 4px;
+    border-radius: 8px;
+}
+
+.hamburguer__bar {
+    position: relative;
+}
+
+.hamburguer__bar::before,
+.hamburguer__bar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -11px;
+    transition: all .3s;
+}
+
+.hamburguer__bar::after {
+    top: 11px;
+}
+
+.hamburguer__bar--open {
+    height: 0;
+}
+
+.hamburguer__bar--open::before,
+.hamburguer__bar--open::after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.hamburguer__bar--open::after {
+    transform: rotate(-45deg);
+}
+
+.navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #225A7C;
+    transform: translateX(-100%);
+    transition: transform .45s ease-in-out;
+}
+
+.navbar__signup {
+    margin-bottom: 1em;
+}
+
+.navbar__signup,
+.navbar__login {
+    display: block;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    color: #fff;
+    border-radius: 1em;
+}
+
+.navbar--open {
+    transform: translateX(0%);
+}
+
+.menu {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-bottom: 2px solid #fff;
+}
+
+.menu__item {
+    margin-bottom: 1em;
+}
+
+.menu__item:last-of-type {
+    margin-bottom: 0;
+}
+
+.menu__link {
+    display: flex;
+    color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.menu__link:active,
+.navbar__signup:active,
+.navbar__login:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu__icon {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+}
+
+header .logo {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.logo {
+    font-family: "Playball", sans-serif;
+    font-weight: 400;
+}
+
+.logo a {
+    color: white;
+}
+
+.search-game {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.search-game img {
+    max-width: 100%;
+}
+
+.desktop-menu,
+.search-game + div {
+    display: none;
+}
+
+/* ---------- Main ------------ */
+
+.banner {
+    position: relative;
+    height: 30vh;
+}
+
+.banner__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner__info {
+    position: absolute;
+    left: 10%;
+    bottom: 25%;
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner__info p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.trending-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 300px));
+    justify-content: center;
+    grid-gap: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.trending-container h2 {
+    align-self: flex-start;
+    grid-column: 1 / -1;
+    margin-top: 1.25em;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    border-radius: 1em;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 1em;
+}
+
+.card__image {
+    max-width: 100%;
+    height: 170px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.card__title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.card__price {
+    font-weight: 600;
+    margin: 0;
+}
+
+.card__price + div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.card__platforms {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.card__platforms li {
+    margin-right: 1em;
+}
+
+.shopping-cart-checked img {
+    max-width: 100%;
+}
+
+/* ---------- Footer ------------ */
+
+footer {
+    z-index: 1;
+    display: grid;
+    grid-template-rows: auto auto 1px auto;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: #225A7C;
+    color: #fff;
+}
+
+footer .logo,
+.refer-friend,
+.invite-friend,
+.copyright-text {
+    display: none;
+}
+
+.languages-list {
+    width: 270px;
+    font-size: .8rem;
+    font-weight: 500;
+    align-self: center;
+    border-radius: 8px;
+    border-color: transparent;
+    padding-left: 1em;
+    color: inherit;
+    height: 36px;
+    background-color: #094B73;
+    font-family: poppins;
+    border: 2px solid white;
+}
+
+.legal-terms {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+.legal-terms li {
+    padding: 6px 0;
+}
+
+.legal-terms li a {
+    color: inherit;
+}
+
+.separator {
+    justify-self: center;
+    width: 100%;
+    height: 1px;
+    border: 1px solid #fff;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.social-media li a img {
+    width: 32px;
+}
+
+/* ---------- Media Queries ------------ */
+
+@media (min-width: 768px) {
+    .banner {
+        height: 45vh;
+    }
+
+    .trending-container {
+        grid-gap: 2.25em;
+        margin-bottom: 4em;
+    }
+
+    .card {
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto 3px auto;
+        grid-template-areas:
+        "title language"
+        "text ."
+        "invite legal-terms"
+        "separator separator"
+        "copyright social-media";
+        align-items: center;
+        height: 320px;
+        padding: 0 4em;
+    }
+
+    footer .logo,
+    .refer-friend,
+    .invite-friend,
+    .copyright-text {
+        display: initial;
+    }
+
+    footer .logo {
+        grid-area: title;
+        font-size: 1.5em;
+    }
+
+    .refer-friend {
+        width: 40%;
+        font-size: 0.8rem;
+    }
+
+    .languages-list,
+    .legal-terms,
+    .social-media {
+        justify-self: end;
+    }
+
+    .languages-list {
+        grid-area: language;
+        width: 280px;
+        color: inherit;
+        background-color: #094B73;
+        border-radius: 8px;
+        height: 36px;
+        border: 2px solid white;
+        padding-left: 1em;
+        font-weight: 500;
+        font-family: poppins;
+    }
+
+    .languages-list option {
+        font-family: poppins;
+    }
+
+    footer p {
+        grid-area: text;
+        margin: 0;
+    }
+
+    .refer-friend {
+        width: 40%;
+    }
+
+    .invite-friend {
+        grid-area: invite;
+        font-weight: 700;
+        color: #EF9943;
+        font-size: 0.9rem;
+    }
+
+    .legal-terms {
+        grid-area: legal-terms;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        font-size: 0.85em;
+    }
+
+    .legal-terms li {
+        list-style-type: none;
+    }
+
+    .legal-terms li:nth-of-type(1n+2)::before {
+        content: '\2022';
+        /* Create a circle */
+        padding: .5em;
+    }
+
+    .legal-terms li a {
+        color: inherit;
+    }
+
+    .separator {
+        grid-area: separator;
+        height: 3px;
+        background-color: white;
+    }
+
+    .copyright-text {
+        grid-area: copyright;
+    }
+
+    .social-media {
+        grid-area: social-media;
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .social-media li a {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1366px) {
+    header {
+        justify-content: flex-start;
+        height: 80px;
+        padding: 0 4em;
+    }
+
+    .hamburguer, .navbar {
+        display: none;
+    }
+
+    .desktop-menu,
+    .search-game + div {
+        display: initial;
+    }
+
+    .desktop-menu li a,
+    .search-game + div a {
+        color: #fff;
+    }
+
+    .desktop-menu {
+        display: flex;
+        justify-content: space-evenly;
+        flex-grow: 1;
+        max-width: 500px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+
+    .desktop-menu__link {
+        position: relative;
+    }
+
+    .desktop-menu__link::after {
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        content: "";
+        background-color: #fff;
+        width: 0%;
+        height: 2px;
+        transition: width 0.3s;
+    }
+
+    .desktop-menu__link:hover::after {
+        width: 100%;
+    }
+
+    .search-game {
+        flex-grow: 2;
+        text-align: end;
+        padding-right: 1.5em;
+    }
+
+    .search-game img {
+        height: inherit;
+    }
+
+    .search-game + div a:first-of-type {
+        padding-right: 1.5em;
+    }
+
+    .banner {
+        height: 60vh;
+    }
+
+    .banner__info {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .trending-container {
+        grid-template-columns: repeat(4, 300px);
+        grid-gap: 2.5em;
+    }
+
+    .trending-container h2 {
+        margin-top: 1.5em;
+        font-size: 1.5rem;
+    }
+
+    footer .logo {
+        font-size: 2rem;
+    }
+
+    .refer-friend {
+        width: 18%;
+    }
+}
